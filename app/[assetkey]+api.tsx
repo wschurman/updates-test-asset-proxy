@@ -1,6 +1,6 @@
 export async function GET(request: Request) {
   const urlToFetch = new URL(request.url);
-  urlToFetch.host = `staging-assets.eascdn.net`;
+  urlToFetch.host = `assets.eascdn.net`;
   urlToFetch.port = '';
   urlToFetch.protocol = 'https:';
   return await fetch(urlToFetch, {
@@ -9,7 +9,7 @@ export async function GET(request: Request) {
       ...Object.fromEntries(request.headers.entries()),
       'Accept-Encoding': '*',
       'cache-control': 'no-cache',
-      host: `staging-assets.eascdn.net`,
+      host: `assets.eascdn.net`,
     },
   });
 }
